@@ -4,9 +4,9 @@ import base64
 
 class FileDecoder(object):
 
-	def __init__(self):
-		self.file = open("0-formatted.txt","r")
-		self.recoveredfile = open("recoveredfile.rar", "wb")
+	def __init__(self,inputfile,outputfile):
+		self.file = open(inputfile,"r")
+		self.recoveredfile = open(outputfile, "wb")
 
 
 	def getBuffer(self,bytecounter=10):
@@ -23,12 +23,6 @@ class FileDecoder(object):
 		self.recoveredfile.close()
 
 	def rundecoder(self):
-		#self.getBuffer()
 		self.decodeBuffer()
 
 
-
-
-if __name__=="__main__":
-	a = FileDecoder()
-	a.rundecoder()
